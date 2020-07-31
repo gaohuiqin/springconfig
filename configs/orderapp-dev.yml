@@ -1,8 +1,6 @@
 server:
   port: 8883
 spring:
-  application:
-    name: orderapp
   cloud:
     consul:
       host: localhost
