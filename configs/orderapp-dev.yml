@@ -1,0 +1,28 @@
+server:
+  port: 8883
+spring:
+  application:
+    name: orderapp
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: orderservice
+  zipkin:
+    base-url: http://localhost:8886
+  sleuth:
+    sampler:
+      probability: 1.0
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
